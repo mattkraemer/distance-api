@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Distance Calculator API</title>
+    <meta name="description" content="Calculate the distance between two geographic coordinates.">
+    <meta name="author" content="c1x.dev">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- SEO -->
+    <meta name="keywords" content="distance, calculator, geographic, coordinates, API">
+    <meta name="robots" content="index, follow">
+
+    <!-- Social Meta Tags (You can customize these for better social media sharing) -->
+    <meta property="og:title" content="Distance Calculator API">
+    <meta property="og:description" content="Calculate the distance between two geographic coordinates.">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header>
+      <h1>Distance Calculator API</h1>
+    </header>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>The Distance Calculator API provides a simple method to calculate the geographical distance between two sets of latitude and longitude coordinates. It uses the Haversine formula to ensure accurate results.</p>
+    </section>
+
+    <section>
+      <h2>Endpoint</h2>
+      <pre>GET http://localhost:3000/:lat1-:lng1/:lat2-:lng2</pre>
+    </section>
+
+    <section>
+      <h2>Parameters</h2>
+      <ul>
+          <li><strong>lat1, lng1:</strong> Latitude and Longitude of the first location.</li>
+          <li><strong>lat2, lng2:</strong> Latitude and Longitude of the second location.</li>
+          <li><strong>unit (optional):</strong> Desired unit for the result distance. Can be 'kilometers' (default), 'meters', or 'miles'.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Response</h2>
+      <p>Returns a JSON object with the calculated distance and the unit of measurement.</p>
+      <pre>
+        {
+          "distance": 1234.56,
+          "unit": "kilometers" // Can be "kilometers", "meters", or "miles"
+        }
+      </pre>
+      <p>If no unit is specified in the request, the default unit will be "kilometers".</p>
+    </section>
+
+    <section>
+      <h2>Example</h2>
+      <p>To calculate the distance between New York City and Los Angeles in miles:</p>
+      <pre>http://localhost:3000/40.7128,-74.0060/34.0522,-118.2437/miles</pre>
+    </section>
+
+    <footer>
+      <p>© 2023</p>
+    </footer>
+    
+  </body>
+</html>
